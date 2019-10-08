@@ -27,6 +27,40 @@ public interface simpleCalcListener extends ParseTreeListener {
 	 */
 	void exitAssign(simpleCalcParser.AssignContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code Assignment}
+	 * labeled alternative in {@link simpleCalcParser#assignments}.
+	 * @param ctx the parse tree
+	 */
+	void enterAssignment(simpleCalcParser.AssignmentContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Assignment}
+	 * labeled alternative in {@link simpleCalcParser#assignments}.
+	 * @param ctx the parse tree
+	 */
+	void exitAssignment(simpleCalcParser.AssignmentContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Expression}
+	 * labeled alternative in {@link simpleCalcParser#assignments}.
+	 * @param ctx the parse tree
+	 */
+	void enterExpression(simpleCalcParser.ExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Expression}
+	 * labeled alternative in {@link simpleCalcParser#assignments}.
+	 * @param ctx the parse tree
+	 */
+	void exitExpression(simpleCalcParser.ExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link simpleCalcParser#exprList}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprList(simpleCalcParser.ExprListContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link simpleCalcParser#exprList}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprList(simpleCalcParser.ExprListContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code IfStatement}
 	 * labeled alternative in {@link simpleCalcParser#conditional}.
 	 * @param ctx the parse tree

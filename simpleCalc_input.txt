@@ -1,6 +1,7 @@
-a = 5;
-b = 8; 
-x = 6;
+a=4;
+b=3;
+x=8;
 
-if ( !(b > a) || b > a && x > b ) then q = 10; else q = 0;
-q
+if(x>b && b<a) then x=10; b=0; a=5; else x=0;b=0;a=0;
+while(b<10) do b=b+2; x=x+5;
+x
