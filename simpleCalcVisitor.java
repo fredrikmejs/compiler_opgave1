@@ -22,6 +22,83 @@ public interface simpleCalcVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssign(simpleCalcParser.AssignContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code ConditionAndElse}
+	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditionAndElse(simpleCalcParser.ConditionAndElseContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ConditionAnd}
+	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditionAnd(simpleCalcParser.ConditionAndContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ConditionOrElse}
+	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditionOrElse(simpleCalcParser.ConditionOrElseContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ConditionOr}
+	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditionOr(simpleCalcParser.ConditionOrContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ConditionElse}
+	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditionElse(simpleCalcParser.ConditionElseContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ConditionSimple}
+	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitConditionSimple(simpleCalcParser.ConditionSimpleContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Equals}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitEquals(simpleCalcParser.EqualsContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Notequal}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNotequal(simpleCalcParser.NotequalContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Less}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLess(simpleCalcParser.LessContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Bigger}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBigger(simpleCalcParser.BiggerContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code LessOrEqual}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLessOrEqual(simpleCalcParser.LessOrEqualContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Substraction}
 	 * labeled alternative in {@link simpleCalcParser#expr}.
 	 * @param ctx the parse tree
