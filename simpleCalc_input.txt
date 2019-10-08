@@ -1,4 +1,6 @@
-a = 0;
-x = 10;
-while(x >= 0) do x = x - 1; a = a +1;
-x
+a = 5;
+b = 8; 
+x = 6;
+
+if ( a > b) then q = 10; else q = 0;
+q

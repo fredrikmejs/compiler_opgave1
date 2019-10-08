@@ -205,12 +205,10 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements simpleCalc
     	else return 0.0;
     }
     public Double visitNot(simpleCalcParser.NotContext ctx){
-    	if (visit(ctx.c) == 1.0) {
+    	if (visit(ctx.c1) == 1.0) {
     		return 0.0;
     	}
     	else return 1.0;
     }
-
-
 }
 
