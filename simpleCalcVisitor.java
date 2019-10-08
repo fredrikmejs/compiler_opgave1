@@ -85,6 +85,13 @@ public interface simpleCalcVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitBiggerOrEqual(simpleCalcParser.BiggerOrEqualContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Not}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNot(simpleCalcParser.NotContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code And}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
 	 * @param ctx the parse tree

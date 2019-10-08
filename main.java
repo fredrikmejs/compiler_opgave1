@@ -62,7 +62,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements simpleCalc
 	}
 	for (simpleCalcParser.LoopContext l:ctx.lo ) {
 		visit(l);		
-	}
+	} 
 	return visit(ctx.e);
     };
 
@@ -203,6 +203,12 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements simpleCalc
     		return 1.0;
     	}
     	else return 0.0;
+    }
+    public Double visitNot(simpleCalcParser.NotContext ctx){
+    	if (visit(ctx.c) == 1.0) {
+    		return 0.0;
+    	}
+    	else return 1.0;
     }
 
 
