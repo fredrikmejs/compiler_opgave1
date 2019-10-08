@@ -43,34 +43,6 @@ public interface simpleCalcVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitWhile(simpleCalcParser.WhileContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Equals}
-	 * labeled alternative in {@link simpleCalcParser#condition}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEquals(simpleCalcParser.EqualsContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code NotEqual}
-	 * labeled alternative in {@link simpleCalcParser#condition}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNotEqual(simpleCalcParser.NotEqualContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Less}
-	 * labeled alternative in {@link simpleCalcParser#condition}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitLess(simpleCalcParser.LessContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Bigger}
-	 * labeled alternative in {@link simpleCalcParser#condition}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBigger(simpleCalcParser.BiggerContext ctx);
-	/**
 	 * Visit a parse tree produced by the {@code LessOrEqual}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
 	 * @param ctx the parse tree
@@ -78,12 +50,12 @@ public interface simpleCalcVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLessOrEqual(simpleCalcParser.LessOrEqualContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code BiggerOrEqual}
+	 * Visit a parse tree produced by the {@code Equals}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitBiggerOrEqual(simpleCalcParser.BiggerOrEqualContext ctx);
+	T visitEquals(simpleCalcParser.EqualsContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Not}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
@@ -92,12 +64,19 @@ public interface simpleCalcVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNot(simpleCalcParser.NotContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code And}
+	 * Visit a parse tree produced by the {@code NotEqual}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAnd(simpleCalcParser.AndContext ctx);
+	T visitNotEqual(simpleCalcParser.NotEqualContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Bigger}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBigger(simpleCalcParser.BiggerContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Or}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
@@ -105,6 +84,27 @@ public interface simpleCalcVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitOr(simpleCalcParser.OrContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code And}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAnd(simpleCalcParser.AndContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Less}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitLess(simpleCalcParser.LessContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code BiggerOrEqual}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBiggerOrEqual(simpleCalcParser.BiggerOrEqualContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code PlusMinus}
 	 * labeled alternative in {@link simpleCalcParser#expr}.

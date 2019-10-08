@@ -2,5 +2,5 @@ a = 5;
 b = 8; 
 x = 6;
 
-if ( a > b) then q = 10; else q = 0;
+if ( !(b > a) || b > a && x > b ) then q = 10; else q = 0;
 q

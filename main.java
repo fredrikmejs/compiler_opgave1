@@ -156,6 +156,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements simpleCalc
     	else return 0.0;
     }
 
+
     public Double visitNotEqual(simpleCalcParser.NotEqualContext ctx){
     	if (!visit(ctx.e1).equals(visit(ctx.e2))) {
     		return 1.0;
