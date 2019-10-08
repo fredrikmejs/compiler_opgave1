@@ -14,13 +14,13 @@ loop: 'while' '(' c1=condition ')' 'do' e1=expr asign #while
  ;
 
 condition:  e1=expr '==' e2=expr   #Equals 
-		 |  e1=expr '!=' e2=expr   #Notequal
+		 |  e1=expr '!=' e2=expr   #NotEqual
 		 |	e1=expr '>' e2=expr    #Less
 		 |	e1=expr '<' e2=expr    #Bigger
 		 |  e1=expr '>=' e2=expr   #LessOrEqual
-		 | 	e1=expr '<=' e2=expr   #LessOrEqual 
-		 |  e1=expr && e2=expr     #And
-		 |	e1=expr || e2=expr     #Or  
+		 | 	e1=expr '<=' e2=expr   #BiggerOrEqual 
+		 |  e1=expr '&&' e2=expr   #And
+		 |	e1=expr '||' e2=expr   #Or  
 ;
 
 

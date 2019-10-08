@@ -102,25 +102,26 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements simpleCalc
     	else {
     		return null; 
     	}
-    }
+    };
 
     public Double visitifStatement(simpleCalcParser.Ifstatement ctx){
     	if (visit(ctx.c1 == 1)) {
-    		return e1;     		
+    		visit(ctx.e1);     		
     	}
     	else {
     		return null;
     	}
-    }
+    };
    
     public Double visitiIfelse(simpleCalcParser.IfElse ctx){
-    	if (visit(ctx.c1 == 1)) {
-    		return e1;     		
+    	if(visit(ctx.c1) == 1.0) {
+    		visit(ctx.e1);
     	}
     	else {
-    		return null;
+    		visit(ctx.e2);
     	}
-    }
+    	return null;
+    };
 
 
     public Double visitSignedConstant(simpleCalcParser.SignedConstantContext ctx){
@@ -141,6 +142,64 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements simpleCalc
 
 	return Double.parseDouble(ctx.c.getText());
     };
+
+
+    public Double visitEquals(simpleCalcParser.EqualsContext ctx){
+    	if (visit(ctx.e1).equals(visit(ctx.e2))) {
+    		return 1.0;
+    	}
+    	else return 0.0;
+    }
+
+    public Double visitNotEqual(simpleCalcParser.NotEqualContext ctx){
+    	if (!visit(ctx.e1).equals(visit(ctx.e2))) {
+    		return 1.0;
+    	}
+    	else return 0.0;
+    }
+
+    public Double visitLess(simpleCalcParser.LessContext ctx){
+    	if (visit(ctx.e1) > visit(ctx.e2)) {
+    		return 1.0;
+    	}
+    	else return 0.0;
+    }
+
+    public Double visitBigger(simpleCalcParser.BiggerContext ctx){
+    	if (visit(ctx.e1) < visit(ctx.e2)) {
+    		return 1.0;
+    	}
+    	else return 0.0;
+    }
+
+    public Double visitLessOrEqual(simpleCalcParser.LessOrEqualContext ctx){
+    	if (visit(ctx.e1) >= visit(ctx.e2)) {
+    		return 1.0;
+    	}
+    	else return 0.0;
+    }
+
+	public Double visitBiggerOrLess(simpleCalcParser.BiggerOrLessContext ctx){
+    	if (visit(ctx.e1) <= visit(ctx.e2)) {
+    		return 1.0;
+    	}
+    	else return 0.0;
+    }
+
+    public Double visitAnd(simpleCalcParser.AndContext ctx){
+    	if (visit(ctx.e1) && visit(ctx.e2)) {
+    		return 1.0;
+    	}
+    	else return 0.0;
+    }
+
+    public Double visitOr(simpleCalcParser.OrContext ctx){
+    	if (visit(ctx.e1) || visit(ctx.e2)) {
+    		return 1.0;
+    	}
+    	else return 0.0;
+    }
+
 
 }
 
