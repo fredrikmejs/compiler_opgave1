@@ -74,27 +74,55 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements simpleCalc
 	return d;
     };
     
-    public Double visitAddition(simpleCalcParser.AdditionContext ctx){
-	    return visit(ctx.e1)+visit(ctx.e2);	    
+    public Double visitPlusMinus(simpleCalcParser.AdditionContext ctx){
+	    if (ctx.op.getText().equals("+")) {
+	    	return visit(ctx.e1)+visit(ctx.e2);
+	    }
+	else return visit(ctx.e1)-visit(ctx.e2);   
     };
 
-    public Double visitSubstraction(simpleCalcParser.SubstractionContext ctx){
-	    return visit(ctx.e1)-visit(ctx.e2 );
-	};
-
-    public Double visitMultidiv(simpleCalcParser.MultiplicationContext ctx){
-	return visit(ctx.e1)*visit(ctx.e2);
-    };
-
-    public Double visitDivision(simpleCalcParser.DivisionContext ctx){
-	return visit(ctx.e1)/visit(ctx.e2);
+    public Double visitMultidiv(simpleCalcParser.MultidivContext ctx){
+    	if(ctx.op.getText().equals("*")){
+    		return visit(ctx.e1)*visit(ctx.e2);
+    	}
+    	else {
+    		return visit(ctx.e1)/visit(ctx.e2);
+    	}
     };
 
     public Double visitConstant(simpleCalcParser.ConstantContext ctx){
 	return Double.parseDouble(ctx.c.getText()); 
     };
 
+    public Double vistitWhile(simpleCalcParser.WhileContext ctx){
+
+    	if (visit(ctx.c1) == 1) {
+    		return e1;
+    	}
+    	else {
+    		return null; 
+    	}
+    }
+
+    public Double visitifStatement(simpleCalcParser.Ifstatement ctx){
+    	if (visit(ctx.c1 == 1)) {
+    		return e1;     		
+    	}
+    	else {
+    		return null;
+    	}
+    }
    
+    public Double visitiIfelse(simpleCalcParser.IfElse ctx){
+    	if (visit(ctx.c1 == 1)) {
+    		return e1;     		
+    	}
+    	else {
+    		return null;
+    	}
+    }
+
+
     public Double visitSignedConstant(simpleCalcParser.SignedConstantContext ctx){
 	return Double.parseDouble(ctx.getText());
     };
@@ -105,9 +133,9 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements simpleCalc
 	String varname=ctx.x.getText();
 	Double v = visit(ctx.e);
 	env.put(varname,v);
-
 	return v;
     };
+
 
     public Double visitNumMultiAlpha(simpleCalcParser.NumMultiAlphaContext ctx){
 

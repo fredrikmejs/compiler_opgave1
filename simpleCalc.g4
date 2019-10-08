@@ -6,8 +6,8 @@ assign : x=ID '=' e=expr ';' ;
 
 /* A grammar for arithmetic expressions */
 
-condional: 'if' '(' c1=condition ')' 'then' e1=expr #ifStatement
-		 | 'if' '(' c1=condition ')' 'then' e1=expr 'else' e2=expr #ifElse
+condional: 'if' '(' c1=condition ')' 'then' e1=expr 				 #IfStatement
+		 | 'if' '(' c1=condition ')' 'then' e1=expr 'else' e2=expr   #IfElse
 ;
 
 loop: 'while' '(' c1=condition ')' 'do' e1=expr asign #while
