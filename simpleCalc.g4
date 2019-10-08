@@ -19,9 +19,8 @@ condition:  e1=expr '==' e2=expr   #Equals
 		 |	e1=expr '<' e2=expr    #Bigger
 		 |  e1=expr '>=' e2=expr   #LessOrEqual
 		 | 	e1=expr '<=' e2=expr   #LessOrEqual 
-		 | 	e1=expr || e2=expr     #Or
 		 |  e1=expr && e2=expr     #And
-		 |  
+		 |	e1=expr || e2=expr     #Or  
 ;
 
 
@@ -29,8 +28,7 @@ expr : c=FLOAT x=ID		      	  	   # NumMultiAlpha
      | x=ID    	        		       # Variable
      | c=FLOAT	            		   # Constant
      | e1=expr op= MULTIDIV e2=expr    # Multidiv 
-     | e1=expr '+' e2=expr   		   # Addition
-     | e1=expr '-' e2=expr    		   # Substraction
+     | e1=expr op = OP e2=expr     	   # PlusMinus
      | '(' e=expr ')'	      		   # Parenthesis
      | op=OP f=FLOAT          		   # SignedConstant
      
@@ -41,6 +39,7 @@ expr : c=FLOAT x=ID		      	  	   # NumMultiAlpha
 MULTIDIV : ('*' | '/') ;
 
 OP : ('-'|'+') ;
+
 
 ID    : ALPHA (ALPHA|NUM)* ;
 FLOAT : NUM+ ('.' NUM+)? ;
