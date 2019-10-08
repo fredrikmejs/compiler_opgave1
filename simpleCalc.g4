@@ -1,16 +1,16 @@
 grammar simpleCalc;
 
-start   : (as+=assign)* e=expr EOF ;
+start   : (as+=assign)* (con += conditional)* (lo += loop)* e=expr EOF ;
 
 assign : x=ID '=' e=expr ';' ;
 
 /* A grammar for arithmetic expressions */
 
-condional: 'if' '(' c1=condition ')' 'then' e1=expr 				 #IfStatement
-		 | 'if' '(' c1=condition ')' 'then' e1=expr 'else' e2=expr   #IfElse
+conditional: 'if' '(' c1=condition ')' 'then' e1=assign+ 				 #IfStatement
+		 | 'if' '(' c1=condition ')' 'then' e1=assign+ 'else' e2=assign+   #IfElse
 ;
 
-loop: 'while' '(' c1=condition ')' 'do' e1=expr asign #while
+loop: 'while' '(' c1=condition ')' 'do' e1=assign+ #while
  ;
 
 condition:  e1=expr '==' e2=expr   #Equals 
@@ -39,7 +39,6 @@ expr : c=FLOAT x=ID		      	  	   # NumMultiAlpha
 MULTIDIV : ('*' | '/') ;
 
 OP : ('-'|'+') ;
-
 
 ID    : ALPHA (ALPHA|NUM)* ;
 FLOAT : NUM+ ('.' NUM+)? ;

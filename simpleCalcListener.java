@@ -27,77 +27,41 @@ public interface simpleCalcListener extends ParseTreeListener {
 	 */
 	void exitAssign(simpleCalcParser.AssignContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code ConditionAndElse}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * Enter a parse tree produced by the {@code IfStatement}
+	 * labeled alternative in {@link simpleCalcParser#conditional}.
 	 * @param ctx the parse tree
 	 */
-	void enterConditionAndElse(simpleCalcParser.ConditionAndElseContext ctx);
+	void enterIfStatement(simpleCalcParser.IfStatementContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code ConditionAndElse}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * Exit a parse tree produced by the {@code IfStatement}
+	 * labeled alternative in {@link simpleCalcParser#conditional}.
 	 * @param ctx the parse tree
 	 */
-	void exitConditionAndElse(simpleCalcParser.ConditionAndElseContext ctx);
+	void exitIfStatement(simpleCalcParser.IfStatementContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code ConditionAnd}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * Enter a parse tree produced by the {@code IfElse}
+	 * labeled alternative in {@link simpleCalcParser#conditional}.
 	 * @param ctx the parse tree
 	 */
-	void enterConditionAnd(simpleCalcParser.ConditionAndContext ctx);
+	void enterIfElse(simpleCalcParser.IfElseContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code ConditionAnd}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * Exit a parse tree produced by the {@code IfElse}
+	 * labeled alternative in {@link simpleCalcParser#conditional}.
 	 * @param ctx the parse tree
 	 */
-	void exitConditionAnd(simpleCalcParser.ConditionAndContext ctx);
+	void exitIfElse(simpleCalcParser.IfElseContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code ConditionOrElse}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * Enter a parse tree produced by the {@code while}
+	 * labeled alternative in {@link simpleCalcParser#loop}.
 	 * @param ctx the parse tree
 	 */
-	void enterConditionOrElse(simpleCalcParser.ConditionOrElseContext ctx);
+	void enterWhile(simpleCalcParser.WhileContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code ConditionOrElse}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
+	 * Exit a parse tree produced by the {@code while}
+	 * labeled alternative in {@link simpleCalcParser#loop}.
 	 * @param ctx the parse tree
 	 */
-	void exitConditionOrElse(simpleCalcParser.ConditionOrElseContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code ConditionOr}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
-	 * @param ctx the parse tree
-	 */
-	void enterConditionOr(simpleCalcParser.ConditionOrContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code ConditionOr}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
-	 * @param ctx the parse tree
-	 */
-	void exitConditionOr(simpleCalcParser.ConditionOrContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code ConditionElse}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
-	 * @param ctx the parse tree
-	 */
-	void enterConditionElse(simpleCalcParser.ConditionElseContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code ConditionElse}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
-	 * @param ctx the parse tree
-	 */
-	void exitConditionElse(simpleCalcParser.ConditionElseContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code ConditionSimple}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
-	 * @param ctx the parse tree
-	 */
-	void enterConditionSimple(simpleCalcParser.ConditionSimpleContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code ConditionSimple}
-	 * labeled alternative in {@link simpleCalcParser#condional}.
-	 * @param ctx the parse tree
-	 */
-	void exitConditionSimple(simpleCalcParser.ConditionSimpleContext ctx);
+	void exitWhile(simpleCalcParser.WhileContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Equals}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
@@ -111,17 +75,17 @@ public interface simpleCalcListener extends ParseTreeListener {
 	 */
 	void exitEquals(simpleCalcParser.EqualsContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Notequal}
+	 * Enter a parse tree produced by the {@code NotEqual}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
 	 * @param ctx the parse tree
 	 */
-	void enterNotequal(simpleCalcParser.NotequalContext ctx);
+	void enterNotEqual(simpleCalcParser.NotEqualContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Notequal}
+	 * Exit a parse tree produced by the {@code NotEqual}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
 	 * @param ctx the parse tree
 	 */
-	void exitNotequal(simpleCalcParser.NotequalContext ctx);
+	void exitNotEqual(simpleCalcParser.NotEqualContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Less}
 	 * labeled alternative in {@link simpleCalcParser#condition}.
@@ -159,17 +123,53 @@ public interface simpleCalcListener extends ParseTreeListener {
 	 */
 	void exitLessOrEqual(simpleCalcParser.LessOrEqualContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Substraction}
-	 * labeled alternative in {@link simpleCalcParser#expr}.
+	 * Enter a parse tree produced by the {@code BiggerOrEqual}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
 	 * @param ctx the parse tree
 	 */
-	void enterSubstraction(simpleCalcParser.SubstractionContext ctx);
+	void enterBiggerOrEqual(simpleCalcParser.BiggerOrEqualContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Substraction}
+	 * Exit a parse tree produced by the {@code BiggerOrEqual}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitBiggerOrEqual(simpleCalcParser.BiggerOrEqualContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code And}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterAnd(simpleCalcParser.AndContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code And}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitAnd(simpleCalcParser.AndContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Or}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterOr(simpleCalcParser.OrContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Or}
+	 * labeled alternative in {@link simpleCalcParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitOr(simpleCalcParser.OrContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code PlusMinus}
 	 * labeled alternative in {@link simpleCalcParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitSubstraction(simpleCalcParser.SubstractionContext ctx);
+	void enterPlusMinus(simpleCalcParser.PlusMinusContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code PlusMinus}
+	 * labeled alternative in {@link simpleCalcParser#expr}.
+	 * @param ctx the parse tree
+	 */
+	void exitPlusMinus(simpleCalcParser.PlusMinusContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Parenthesis}
 	 * labeled alternative in {@link simpleCalcParser#expr}.
@@ -182,30 +182,6 @@ public interface simpleCalcListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitParenthesis(simpleCalcParser.ParenthesisContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code Multiplication}
-	 * labeled alternative in {@link simpleCalcParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterMultiplication(simpleCalcParser.MultiplicationContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Multiplication}
-	 * labeled alternative in {@link simpleCalcParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitMultiplication(simpleCalcParser.MultiplicationContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code Addition}
-	 * labeled alternative in {@link simpleCalcParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterAddition(simpleCalcParser.AdditionContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Addition}
-	 * labeled alternative in {@link simpleCalcParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitAddition(simpleCalcParser.AdditionContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Variable}
 	 * labeled alternative in {@link simpleCalcParser#expr}.
@@ -243,17 +219,17 @@ public interface simpleCalcListener extends ParseTreeListener {
 	 */
 	void exitConstant(simpleCalcParser.ConstantContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Division}
+	 * Enter a parse tree produced by the {@code Multidiv}
 	 * labeled alternative in {@link simpleCalcParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterDivision(simpleCalcParser.DivisionContext ctx);
+	void enterMultidiv(simpleCalcParser.MultidivContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Division}
+	 * Exit a parse tree produced by the {@code Multidiv}
 	 * labeled alternative in {@link simpleCalcParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitDivision(simpleCalcParser.DivisionContext ctx);
+	void exitMultidiv(simpleCalcParser.MultidivContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code SignedConstant}
 	 * labeled alternative in {@link simpleCalcParser#expr}.

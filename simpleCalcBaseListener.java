@@ -39,73 +39,37 @@ public class simpleCalcBaseListener implements simpleCalcListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConditionAndElse(simpleCalcParser.ConditionAndElseContext ctx) { }
+	@Override public void enterIfStatement(simpleCalcParser.IfStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConditionAndElse(simpleCalcParser.ConditionAndElseContext ctx) { }
+	@Override public void exitIfStatement(simpleCalcParser.IfStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConditionAnd(simpleCalcParser.ConditionAndContext ctx) { }
+	@Override public void enterIfElse(simpleCalcParser.IfElseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConditionAnd(simpleCalcParser.ConditionAndContext ctx) { }
+	@Override public void exitIfElse(simpleCalcParser.IfElseContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterConditionOrElse(simpleCalcParser.ConditionOrElseContext ctx) { }
+	@Override public void enterWhile(simpleCalcParser.WhileContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitConditionOrElse(simpleCalcParser.ConditionOrElseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterConditionOr(simpleCalcParser.ConditionOrContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitConditionOr(simpleCalcParser.ConditionOrContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterConditionElse(simpleCalcParser.ConditionElseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitConditionElse(simpleCalcParser.ConditionElseContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterConditionSimple(simpleCalcParser.ConditionSimpleContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitConditionSimple(simpleCalcParser.ConditionSimpleContext ctx) { }
+	@Override public void exitWhile(simpleCalcParser.WhileContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -123,13 +87,13 @@ public class simpleCalcBaseListener implements simpleCalcListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNotequal(simpleCalcParser.NotequalContext ctx) { }
+	@Override public void enterNotEqual(simpleCalcParser.NotEqualContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNotequal(simpleCalcParser.NotequalContext ctx) { }
+	@Override public void exitNotEqual(simpleCalcParser.NotEqualContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -171,13 +135,49 @@ public class simpleCalcBaseListener implements simpleCalcListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSubstraction(simpleCalcParser.SubstractionContext ctx) { }
+	@Override public void enterBiggerOrEqual(simpleCalcParser.BiggerOrEqualContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSubstraction(simpleCalcParser.SubstractionContext ctx) { }
+	@Override public void exitBiggerOrEqual(simpleCalcParser.BiggerOrEqualContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterAnd(simpleCalcParser.AndContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAnd(simpleCalcParser.AndContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterOr(simpleCalcParser.OrContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOr(simpleCalcParser.OrContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPlusMinus(simpleCalcParser.PlusMinusContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPlusMinus(simpleCalcParser.PlusMinusContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -190,30 +190,6 @@ public class simpleCalcBaseListener implements simpleCalcListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitParenthesis(simpleCalcParser.ParenthesisContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterMultiplication(simpleCalcParser.MultiplicationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitMultiplication(simpleCalcParser.MultiplicationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterAddition(simpleCalcParser.AdditionContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitAddition(simpleCalcParser.AdditionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -255,13 +231,13 @@ public class simpleCalcBaseListener implements simpleCalcListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDivision(simpleCalcParser.DivisionContext ctx) { }
+	@Override public void enterMultidiv(simpleCalcParser.MultidivContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDivision(simpleCalcParser.DivisionContext ctx) { }
+	@Override public void exitMultidiv(simpleCalcParser.MultidivContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
