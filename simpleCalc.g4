@@ -6,15 +6,11 @@ assign : x=ID '=' e=expr ';' ;
 
 /* A grammar for arithmetic expressions */
 
-condional: 'if' '(' (c1=condition '&&' c2=condition) ')' 'then' e1=expr  'else' e2=expr #ConditionAndElse
-		 | 'if' '(' (c1=condition '&&' c2=condition) ')' 'then' e1=expr 				#ConditionAnd
-		 | 'if' '(' (c1=condition '||' c2=condition) ')' 'then' e1=expr 'else' e2=expr  #ConditionOrElse
-		 | 'if' '(' (c1=condition '||' c2=condition) ')' 'then' e1=expr 				#ConditionOr
-		 | 'if' '(' (c1=condition) ')' 'then' e1=expr 'else' e2=expr 					#ConditionElse
-		 | 'if' '(' (c1=condition) ')' 'then' e1=expr 									#ConditionSimple
-
+condional: 'if' '(' c1=condition ')' 'then' e1=expr #ifStatement
+		 | 'if' '(' c1=condition ')' 'then' e1=expr 'else' e2=expr #ifElse
 ;
-loop: 'while' '(' c1=condition ')' 'do' a1 = asign #while
+
+loop: 'while' '(' c1=condition ')' 'do' e1=expr asign #while
  ;
 
 condition:  e1=expr '==' e2=expr   #Equals 
@@ -23,22 +19,26 @@ condition:  e1=expr '==' e2=expr   #Equals
 		 |	e1=expr '<' e2=expr    #Bigger
 		 |  e1=expr '>=' e2=expr   #LessOrEqual
 		 | 	e1=expr '<=' e2=expr   #LessOrEqual 
+		 | 	e1=expr || e2=expr     #Or
+		 |  e1=expr && e2=expr     #And
+		 |  
 ;
 
 
-expr : c=FLOAT x=ID		      # NumMultiAlpha
-     | x=ID    	              # Variable
-     | c=FLOAT	              # Constant
-     | e1=expr '*' e2=expr    # Multiplication 
-     | e1=expr '/' e2=expr 	  # Division
-     | e1=expr '+' e2=expr    # Addition
-     | e1=expr '-' e2=expr    # Substraction
-     | '(' e=expr ')'	      # Parenthesis
-     | op=OP f=FLOAT          # SignedConstant
+expr : c=FLOAT x=ID		      	  	   # NumMultiAlpha
+     | x=ID    	        		       # Variable
+     | c=FLOAT	            		   # Constant
+     | e1=expr op= MULTIDIV e2=expr    # Multidiv 
+     | e1=expr '+' e2=expr   		   # Addition
+     | e1=expr '-' e2=expr    		   # Substraction
+     | '(' e=expr ')'	      		   # Parenthesis
+     | op=OP f=FLOAT          		   # SignedConstant
      
 ;
 
 // Lexer:
+
+MULTIDIV : ('*' | '/') ;
 
 OP : ('-'|'+') ;
 

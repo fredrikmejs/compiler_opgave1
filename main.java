@@ -82,7 +82,7 @@ class Interpreter extends AbstractParseTreeVisitor<Double> implements simpleCalc
 	    return visit(ctx.e1)-visit(ctx.e2 );
 	};
 
-    public Double visitMultiplication(simpleCalcParser.MultiplicationContext ctx){
+    public Double visitMultidiv(simpleCalcParser.MultiplicationContext ctx){
 	return visit(ctx.e1)*visit(ctx.e2);
     };
 
