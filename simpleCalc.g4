@@ -13,12 +13,12 @@ exprList : (a1+=assignments )+ ;
 
 /* A grammar for arithmetic expressions */
 
-conditional: 'if' '(' (c1=condition) ')' 'then' e1=exprList 	   			   #IfStatement
-		 | 'if' '(' (c1=condition) ')' 'then' e1=exprList 'else' e2=exprList   #IfElse
+conditional: 'if' '(' (c1=condition) ')' '{' e1=exprList '}'	   			   #IfStatement
+		 | 'if' '(' (c1=condition) ')' '{' e1=exprList '}' 'else' '{' e2=exprList '}'  #IfElse
 ;
 
 
-loop: 'while' '(' c1=condition ')' 'do' e1=exprList #while
+loop: 'while' '(' c1=condition ')' '{' e1=exprList '}' #while
  ;
 
 condition:  e1=expr '==' e2=expr     		   #Equals 
